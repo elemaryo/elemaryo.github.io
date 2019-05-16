@@ -6,6 +6,19 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: #011f61;
+    font-weight: 600;
+    transition: opacity 0.3s;
+    opacity: 1;
+}
+
+a:hover {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
 #about::before,
 #experience::before,
 #education::before,
@@ -113,8 +126,7 @@ h2 {
     transform: translateX(-50%);
 }
 
-.title h2:after {
-    content: ' ';
+/* .title h2:after {
     position: absolute;
     display: block;
     width: 700px;
@@ -129,6 +141,20 @@ h2 {
     padding-bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+} */
+
+.title > h2 {
+    position: absolute;
+    display: block;
+    text-align: center;
+    /* margin: 0 2%; */
+}
+
+.line {
+    width: 700px;
+    height: 2px;
+    background-color: #000;
+    margin: 20px auto;
 }
 
 .title h3:after {
