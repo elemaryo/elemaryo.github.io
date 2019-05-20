@@ -39,9 +39,13 @@ a:hover {
 }
 
 .container {
-    width: 70vw;
     margin: 80px auto 40px auto;
     background-color: #e6e9ee;
+}
+
+main {
+    margin: 0 auto;
+    width: 70vw;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -151,8 +155,6 @@ a:hover {
 /*-----------------------------------------------------------------------------------*/
 #about {
     text-align: center;
-    width: 70vw;
-    margin: 0 auto;
     /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15); */
 }
 
@@ -491,7 +493,7 @@ a:hover {
 /*                                     Contact                                       */
 /*-----------------------------------------------------------------------------------*/
 .contactContainer {
-    width: 70vw;
+  margin: 100px auto;
 }
 
 #contact > div {
@@ -530,6 +532,7 @@ a:hover {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+    grid-column-start: 1;
     grid-row-start: 1;
 }
 
@@ -538,6 +541,7 @@ a:hover {
     grid-template-columns: 1fr;
     grid-template-rows: auto minmax(0, 1fr);
     grid-row-start: 2;
+    margin-top: 100px;
 }
 
 .contact-grid {
@@ -600,13 +604,16 @@ a:hover {
 /*-----------------------------------------------------------------------------------*/
 /*                                     Footer                                        */
 /*-----------------------------------------------------------------------------------*/
-#footer {
+footer {
     background: #002060;
-    opacity: 0.9;
-    padding-top: 50px;
-    padding-right: 100px;
-    padding-bottom: 50px;
+    width: 100vw;
+    height: 200px;
     text-align: center;
+}
+
+.footerContent {
+    display: flex;
+    justify-content: center;
 }
 
 #footer .socials-media {
@@ -628,33 +635,10 @@ a:hover {
     color: white;
 }
 
-#footer .socials-media ul li a {
-    font-size: 24px;
-    color: #ffffff;
-    letter-spacing: 0.1em;
-    font-weight: 500;
-    background: transparent;
-    text-transform: uppercase;
-    -moz-transition: all 0.5s ease-in-out 0s;
-    -ms-transition: all 0.5s ease-in-out 0s;
-    -o-transition: all 0.5s ease-in-out 0s;
-    -webkit-transition: all 0.5s ease-in-out 0s;
-    transition: all 0.5s ease-in-out 0s;
-}
-
-#footer .socials-media ul li a:hover {
-    color: #4682B4;
-    -moz-transition: all 0.5s ease-in-out 0s;
-    -ms-transition: all 0.5s ease-in-out 0s;
-    -o-transition: all 0.5s ease-in-out 0s;
-    -webkit-transition: all 0.5s ease-in-out 0s;
-    transition: all 0.5s ease-in-out 0s;
-}
-
-#footer p {
+/* #footer p {
     font-size: 12px;
     letter-spacing: 0.1em;
     font-weight: 500;
     margin-top: 0;
     text-transform: uppercase;
-}
+} */
