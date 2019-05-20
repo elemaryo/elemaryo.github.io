@@ -48,6 +48,15 @@ main {
     width: 70vw;
 }
 
+li {
+    list-style-type: none;
+    color: white;
+}
+
+li > a {
+    color: white;
+}
+
 /*-----------------------------------------------------------------------------------*/
 /*                                     NavBar                                        */
 /*-----------------------------------------------------------------------------------*/
@@ -616,7 +625,7 @@ footer {
     justify-content: center;
 }
 
-#footer .socials-media {
+/* #footer .socials-media {
     width: 100%;
     align-self: center;
 }
@@ -633,7 +642,7 @@ footer {
     margin-left: 10px;
     margin-right: 10px;
     color: white;
-}
+} */
 
 /* #footer p {
     font-size: 12px;
