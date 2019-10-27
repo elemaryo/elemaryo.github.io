@@ -53,7 +53,7 @@ li {
     color: white;
 }
 
-li > a {
+li>a {
     color: white;
 }
 
@@ -99,6 +99,7 @@ li > a {
     align-items: center;
     justify-content: center;
     position: relative;
+    z-index: 100;
 }
 
 .header h1 {
@@ -141,7 +142,7 @@ li > a {
 }
 
 .line {
-    width: 70vw;
+    width: 50vw;
     height: 2px;
     background-color: #000;
     margin: 20px auto;
@@ -162,9 +163,24 @@ li > a {
 /*-----------------------------------------------------------------------------------*/
 /*                                     About                                         */
 /*-----------------------------------------------------------------------------------*/
+.dark {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+#shadow {
+    position: relative;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 #about {
     text-align: center;
-    /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15); */
 }
 
 #about-text {
@@ -190,24 +206,140 @@ li > a {
 /*-----------------------------------------------------------------------------------*/
 /*                              Interests Wheel                                      */
 /*-----------------------------------------------------------------------------------*/
+.carousel {
+    position: relative;
+    height: 600px;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.carousel_image {
+    width: 100%;
+    height: auto%;
+    object-fit: cover;
+    border: 2px solid black;
+}
+
+.carousel_track-container {
+    background: white;
+    height: 90%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel_track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 250ms ease-in;
+}
+
+.carousel_slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.carousel_button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.carousel_button--left {
+    left: -40px;
+    border: 2px solid black;
+}
+
+.carousel_button--right {
+    right: -40px;
+    border: 2px solid black;
+}
+
+.carousel_button img {
+    width: 18px;
+}
+
+.carousel_nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.carousel_indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.carousel_indicator.current-slide {
+    background: #002060;
+}
+
+.is-hidden {
+    display: none;
+}
+
+/* .next::after,
+    .prev::after {
+        content: '>';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        background-color: white;
+        font-size: 20px;
+        width: 1em;
+        height: 3em;
+        font-weight: bold;
+        font-family: sans-serif;
+        transform: translateY(-50%);
+        line-height: 3em;
+        box-sizing: border-box;
+        padding: 0 0.2em;
+        cursor: pointer;
+        opacity: 0.5;
+        transition: opacity 0.1s linear;
+    }
+
+    .next:hover::after,
+    .prev:hover::after {
+        opacity: 1;
+    }
+
+    .prev::after {
+        content: '<';
+        left: 0;
+    }
+}
 
 .slideshow-container {
     max-width: 1000px;
     position: relative;
     margin-top: 100px;
-}
+} */
 
 /* Hide the images by default */
-.mySlides {
+/* .mySlides {
     display: none;
 }
 
 .mySlides img {
     padding-bottom: 100px;
-}
+} */
 
 /* Next & previous buttons */
-.prev,
+/* .prev,
 .next {
     cursor: pointer;
     position: absolute;
@@ -221,22 +353,22 @@ li > a {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
-}
+} */
 
 /* Position the "next button" to the right */
-.next {
+/* .next {
     right: 0;
     border-radius: 3px 0 0 3px;
-}
+} */
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover,
+/* .prev:hover,
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
-}
+} */
 
 /* Caption text */
-.text {
+/* .text {
     color: black;
     font-size: 15px;
     padding: 8px 12px;
@@ -244,19 +376,19 @@ li > a {
     bottom: 8px;
     width: 100%;
     text-align: center;
-}
+} */
 
 /* Number text (1/3 etc) */
-.numbertext {
+/* .numbertext {
     color: #000000;
     font-size: 15px;
     padding: 90px 465px;
     position: absolute;
     top: 0;
-}
+} */
 
 /* The dots/bullets/indicators */
-.dot {
+/* .dot {
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -273,7 +405,7 @@ li > a {
 }
 
 /* Fading animation */
-.fade {
+/* .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
@@ -298,7 +430,7 @@ li > a {
     to {
         opacity: 1
     }
-}
+} */
 
 /*-----------------------------------------------------------------------------------*/
 /*                                     Experience                                    */
@@ -332,8 +464,15 @@ li > a {
     padding: 5px;
 }
 
+.projects .wizard {
+    background-image: url("../images/wizard.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .projects .portfolio {
-    background-image: url("../images/portfolio.jpg");
+    background-image: url("../images/portfolio.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -353,16 +492,15 @@ li > a {
     background-position: center;
 }
 
-.projects .cryptex {
-    background-image: url("..images/pspassist.PNG");
-    background-color: #cccccc;
+.projects .pspassist {
+    background-image: url("../images/pspassist.PNG");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .projects .hand {
-    background-image: url("..images/optimizeU.png");
+    background-image: url("../images/optimizeU.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -370,7 +508,7 @@ li > a {
 
 #projects,
 #projects .sec-content {
-    background-color: #f5f5f5;
+    background-color: white;
 }
 
 .projects .proj {
@@ -397,6 +535,7 @@ li > a {
     justify-content: center;
     flex-direction: column;
     transition: all 0.2s ease-in-out;
+    text-align: center;
     padding: 25px;
 }
 
@@ -409,7 +548,6 @@ li > a {
     font-weight: 700;
     margin-bottom: 5px;
     padding: 5px;
-    border: 2px solid white;
 }
 
 .projects .cover p {
@@ -423,7 +561,7 @@ li > a {
 }
 
 .projects .cover .programs {
-    color: #aad922;
+    color: lightskyblue;
     font-style: italic;
 }
 
@@ -454,7 +592,7 @@ li > a {
 }
 
 .projects .proj:hover .cover {
-    background-color: rgba(0, 0, 0, 1);
+    background-color: #002060;
 }
 
 .projects .proj:hover .cover a,
@@ -464,70 +602,43 @@ li > a {
     opacity: 1;
 }
 
-/* #project {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-row-gap: 50px;
-    align-items: center;
-    justify-items: center;
-}
-
-.project-cards {
-    border: 1px solid;
-    box-sizing: border-box;
-    border-radius: 25px;
-    justify-content: center;
-}
-
-.project-cards img {
-    width: 100%;
-    height: 80%;
-    display: block;
-    object-fit: cover;
-    border: 100px solid rgba(255, 255, 255, .5);
-    border-radius: 25px;
-}
-
-.proj-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 50px;
-    grid-row-gap: 50px;
-} */
-
-/* Skills */
-#skills {}
-
 /*-----------------------------------------------------------------------------------*/
 /*                                     Contact                                       */
 /*-----------------------------------------------------------------------------------*/
 .contactContainer {
-  margin: 100px auto;
+    margin: 100px auto;
 }
 
-#contact > div {
+#contact>div {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     text-align: center;
+    margin-top: 50px;
 }
 
 #contact img {
-    width: 100%;
+    margin: 50px 0 0 10%;
+    width: 80%;
     height: auto;
     display: block;
     object-fit: cover;
 }
 
-/* #vertical-line {
+#contact .line {
+    width: 70%;
+
+}
+
+#vertical-line {
+    text-align: center;
     display: flex;
-    margin-top: 90px;
-    margin-right: 50px;
+    padding: 10px;
 }
 
 #vertical-line div {
     flex: 1;
     height: 100%;
-} */
+}
 
 .one {
     border-right: 1px solid black;
@@ -538,23 +649,20 @@ li > a {
 }
 
 #resume {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    grid-column-start: 1;
-    grid-row-start: 1;
+    display: inline-block;
+    width: 100%;
 }
 
 #email-me {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto minmax(0, 1fr);
-    grid-row-start: 2;
-    margin-top: 100px;
+    width: 100%;
+    display: inline-block;
+    margin: 10px 0 30px 0;
+    margin-left: 30px;
 }
 
 .contact-grid {
     margin-top: 50px;
+    height: 500px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
@@ -616,38 +724,12 @@ li > a {
 footer {
     background: #002060;
     width: 100vw;
-    height: 200px;
     text-align: center;
-}
-
-.footerContent {
-    display: flex;
-    justify-content: center;
-}
-
-/* #footer .socials-media {
-    width: 100%;
-    align-self: center;
-}
-
-#footer .socials-media ul {
-    display: inline-block;
-    list-style-type: none;
-    float: none;
-    margin: 0 0 20px 0;
-}
-
-#footer .socials-media ul li {
-    float: left;
-    margin-left: 10px;
-    margin-right: 10px;
     color: white;
-} */
+    padding: 50px 0;
+}
 
-/* #footer p {
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    font-weight: 500;
-    margin-top: 0;
-    text-transform: uppercase;
-} */
+footer ul li {
+    margin: 20px 20px 30px 0;
+    display: inline-block;
+}
